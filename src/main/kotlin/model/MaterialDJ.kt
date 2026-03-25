@@ -1,0 +1,16 @@
+package model
+
+abstract class MaterialDJ(
+    id: String,
+    nom: String,
+    marca: String,
+    model: String,
+    preuPerDia: Double,
+    disponible: Boolean,
+    estat: EstatMaterial
+) : Material(id, nom, marca, model, preuPerDia, disponible, estat) {
+
+    fun getFamilia(): String {
+        return "DJ"
+    }
+}
