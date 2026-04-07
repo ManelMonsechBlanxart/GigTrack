@@ -1,4 +1,4 @@
-package model
+package model.base
 
 enum class EstatMaterial {
     DISPONIBLE,

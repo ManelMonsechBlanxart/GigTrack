@@ -1,4 +1,6 @@
-package model
+package model.material
+
+import model.base.EstatMaterial
 
 abstract class MaterialSo(
     id: String,

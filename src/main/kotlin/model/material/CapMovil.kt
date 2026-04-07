@@ -1,6 +1,8 @@
-package model
+package model.material
 
-class Wash(
+import model.base.EstatMaterial
+
+class CapMovil(
     id: String,
     nom: String,
     marca: String,
@@ -12,10 +14,10 @@ class Wash(
 ) : MaterialLlum(id, nom, marca, model, preuPerDia, disponible, estat, potenciaW) {
 
     override fun getTipus(): String {
-        return "Wash"
+        return "CapMovil"
     }
 
     override fun resum(): String {
-        return "$nom - Wash $marca $model (${potenciaW}W)"
+        return "$nom - Cap mòbil $marca $model (${potenciaW}W)"
     }
 }

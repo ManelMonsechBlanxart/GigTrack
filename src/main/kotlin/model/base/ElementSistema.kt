@@ -1,4 +1,4 @@
-package model
+package model.base
 
 abstract class ElementSistema(
     val id: String,

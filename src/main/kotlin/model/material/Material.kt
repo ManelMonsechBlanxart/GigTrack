@@ -1,4 +1,8 @@
-package model
+package model.material
+
+import model.base.ElementSistema
+import model.base.EstatMaterial
+import model.exceptions.DadaNoValidaException
 
 abstract class Material(
     id: String,
@@ -9,6 +13,20 @@ abstract class Material(
     var disponible: Boolean,
     var estat: EstatMaterial
 ) : ElementSistema(id, nom) {
+
+    init {
+        assert(preuPerDia >= 0) { "El preu per dia no pot ser negatiu" }
+
+        if (marca.isBlank()) {
+            throw DadaNoValidaException("La marca no pot estar buida")
+        }
+        if (model.isBlank()) {
+            throw DadaNoValidaException("El model no pot estar buit")
+        }
+        if (preuPerDia < 0) {
+            throw DadaNoValidaException("El preu per dia no pot ser negatiu")
+        }
+    }
 
     open fun getTipus(): String {
         return "Material"

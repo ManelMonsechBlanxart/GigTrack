@@ -1,6 +1,8 @@
-package model
+package model.material
 
-class Reproductor(
+import model.base.EstatMaterial
+
+class Controladora(
     id: String,
     nom: String,
     marca: String,
@@ -11,10 +13,10 @@ class Reproductor(
 ) : MaterialDJ(id, nom, marca, model, preuPerDia, disponible, estat) {
 
     override fun getTipus(): String {
-        return "Reproductor"
+        return "Controladora"
     }
 
     override fun resum(): String {
-        return "$nom - Reproductor $marca $model"
+        return "$nom - Controladora $marca $model"
     }
 }
