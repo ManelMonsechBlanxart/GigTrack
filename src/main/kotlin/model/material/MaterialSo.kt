@@ -7,10 +7,11 @@ abstract class MaterialSo(
     nom: String,
     marca: String,
     model: String,
-    preuPerDia: Double,
+    preuPerUnitat: Double,
     disponible: Boolean,
-    estat: EstatMaterial
-) : Material(id, nom, marca, model, preuPerDia, disponible, estat) {
+    estat: EstatMaterial,
+    quantitat: Int
+) : Material(id, nom, marca, model, preuPerUnitat, disponible, estat, quantitat) {
 
     fun getFamilia(): String {
         return "So"

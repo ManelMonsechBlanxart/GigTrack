@@ -1,0 +1,26 @@
+[
+  {
+    "id": "C1",
+    "nom": "Pilu Bar",
+    "telefon": "600000001",
+    "email": "info@pilubar.com"
+  },
+  {
+    "id": "C2",
+    "nom": "Ajuntament d'Esparreguera",
+    "telefon": "600000002",
+    "email": "cultura@esparreguera.cat"
+  },
+  {
+    "id": "C3",
+    "nom": "Ajuntament de Sant Andreu de la Barca",
+    "telefon": "600000003",
+    "email": "events@sabarca.cat"
+  },
+  {
+    "id": "C4",
+    "nom": "Ajuntament de Reus",
+    "telefon": "600000004",
+    "email": "alcalde@reus.cat"
+  }
+]

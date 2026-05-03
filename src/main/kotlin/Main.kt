@@ -1,69 +1,47 @@
-import model.base.EstatMaterial
-import model.gestio.AssignacioMaterial
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.material.*
+import androidx.compose.runtime.*
+import androidx.compose.ui.window.Window
+import androidx.compose.ui.window.application
+
 import model.gestio.Client
 import model.gestio.Esdeveniment
-import model.material.Altaveu
-import model.material.Subwoofer
-import java.time.LocalDate
+import model.material.Material
+import repository.JsonRepository
+import ui.*
+import viewmodel.*
 
-fun main() {
-    try {
-        val client = Client("C1", "Client Test", "600000000", "test@test.com")
+fun main() = application {
 
-        val esdeveniment = Esdeveniment(
-            "E1",
-            "Sessió DJ",
-            LocalDate.now(),
-            "Barcelona",
-            350.0
-        )
+    val clientRepo = JsonRepository("data/clients.json", Client::class.java)
+    val eventRepo = JsonRepository("data/esdeveniments.json", Esdeveniment::class.java)
+    val materialRepo = JsonRepository("data/materials.json", Material::class.java)
 
-        val altaveu = Altaveu(
-            "M1",
-            "Altaveu principal",
-            "JBL",
-            "PRX",
-            40.0,
-            true,
-            EstatMaterial.DISPONIBLE,
-            15,
-            true
-        )
+    val clientVM = ClientViewModel(clientRepo)
+    val eventVM = EsdevenimentViewModel(eventRepo)
+    val materialVM = MaterialViewModel(materialRepo)
 
-        val subwoofer = Subwoofer(
-            "M2",
-            "Subwoofer principal",
-            "RCF",
-            "SUB 8004",
-            50.0,
-            true,
-            EstatMaterial.DISPONIBLE,
-            18,
-            true
-        )
+    Window(onCloseRequest = { exitApplication() }) {
 
-        val assignacio1 = AssignacioMaterial(altaveu, 2, "Equip principal", true)
-        val assignacio2 = AssignacioMaterial(subwoofer, 1, "Refors de greus", false)
+        var pantalla by remember { mutableStateOf("dashboard") }
 
-        esdeveniment.afegirAssignacio(assignacio1)
-        esdeveniment.afegirAssignacio(assignacio2)
-        client.afegirEsdeveniment(esdeveniment)
+        MaterialTheme {
+            Column {
+                Row {
+                    Button(onClick = { pantalla = "dashboard" }) { Text("Inici") }
+                    Button(onClick = { pantalla = "clients" }) { Text("Clients") }
+                    Button(onClick = { pantalla = "events" }) { Text("Esdeveniments") }
+                    Button(onClick = { pantalla = "material" }) { Text("Material") }
+                }
 
-        println(client.resum())
-        println(esdeveniment.resum())
-        println("Cost total material: ${esdeveniment.costTotalMaterial()}€")
-
-        println("Assignacions imprescindibles:")
-        esdeveniment.obtenirAssignacionsImprescindibles().forEach {
-            println(it.resum())
+                when (pantalla) {
+                    "dashboard" -> DashboardScreen(clientVM, eventVM, materialVM)
+                    "clients" -> ClientScreen(clientVM)
+                    "events" -> EsdevenimentScreen(eventVM, clientVM, materialVM)
+                    "material" -> MaterialScreen(materialVM)
+                }
+            }
         }
-
-        println("Esdeveniments ordenats per data:")
-        client.obtenirEsdevenimentsOrdenatsPerData().forEach {
-            println(it.resum())
-        }
-
-    } catch (e: Exception) {
-        println("Error: ${e.message}")
     }
 }

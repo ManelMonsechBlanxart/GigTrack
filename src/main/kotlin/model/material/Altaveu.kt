@@ -1,23 +1,22 @@
 package model.material
 
-import model.exceptions.DadaNoValidaException
 import model.base.EstatMaterial
+import model.exceptions.DadaNoValidaException
 
 class Altaveu(
     id: String,
     nom: String,
     marca: String,
     model: String,
-    preuPerDia: Double,
+    preuPerUnitat: Double,
     disponible: Boolean,
     estat: EstatMaterial,
+    quantitat: Int,
     var polzades: Int,
     var actiu: Boolean
-) : MaterialSo(id, nom, marca, model, preuPerDia, disponible, estat) {
+) : MaterialSo(id, nom, marca, model, preuPerUnitat, disponible, estat, quantitat) {
 
     init {
-        assert(polzades > 0) { "Les polzades han de ser majors que 0" }
-
         if (polzades <= 0) {
             throw DadaNoValidaException("Les polzades han de ser majors que 0")
         }
@@ -29,6 +28,6 @@ class Altaveu(
 
     override fun resum(): String {
         val tipusAlimentacio = if (actiu) "actiu" else "passiu"
-        return "$nom - Altaveu $marca $model (${polzades}\") $tipusAlimentacio"
+        return "$nom - $marca $model (${polzades}\") $tipusAlimentacio - Unitats: $quantitat"
     }
 }

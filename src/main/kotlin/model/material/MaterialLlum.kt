@@ -1,22 +1,21 @@
 package model.material
 
-import model.exceptions.DadaNoValidaException
 import model.base.EstatMaterial
+import model.exceptions.DadaNoValidaException
 
 abstract class MaterialLlum(
     id: String,
     nom: String,
     marca: String,
     model: String,
-    preuPerDia: Double,
+    preuPerUnitat: Double,
     disponible: Boolean,
     estat: EstatMaterial,
+    quantitat: Int,
     var potenciaW: Int
-) : Material(id, nom, marca, model, preuPerDia, disponible, estat) {
+) : Material(id, nom, marca, model, preuPerUnitat, disponible, estat, quantitat) {
 
     init {
-        assert(potenciaW >= 0) { "La potència no pot ser negativa" }
-
         if (potenciaW < 0) {
             throw DadaNoValidaException("La potència no pot ser negativa")
         }

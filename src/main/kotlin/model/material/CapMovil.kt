@@ -7,17 +7,18 @@ class CapMovil(
     nom: String,
     marca: String,
     model: String,
-    preuPerDia: Double,
+    preuPerUnitat: Double,
     disponible: Boolean,
     estat: EstatMaterial,
+    quantitat: Int,
     potenciaW: Int
-) : MaterialLlum(id, nom, marca, model, preuPerDia, disponible, estat, potenciaW) {
+) : MaterialLlum(id, nom, marca, model, preuPerUnitat, disponible, estat, quantitat, potenciaW) {
 
     override fun getTipus(): String {
         return "CapMovil"
     }
 
     override fun resum(): String {
-        return "$nom - Cap mòbil $marca $model (${potenciaW}W)"
+        return "$nom - Cap mòbil $marca $model (${potenciaW}W) - Unitats: $quantitat"
     }
 }

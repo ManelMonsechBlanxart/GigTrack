@@ -1,0 +1,46 @@
+[
+  {
+    "id": "E1",
+    "titol": "Tardeo comercial",
+    "data": "2026-06-15",
+    "lloc": "Pilu Bar - Esparreguera",
+    "cachet": 300.0,
+    "clientId": "C1",
+    "assignacionsMaterial": [
+      {
+        "materialId": "M3",
+        "quantitat": 1
+      },
+      {
+        "materialId": "M5",
+        "quantitat": 2
+      },
+      {
+        "materialId": "M6",
+        "quantitat": 2
+      }
+    ]
+  },
+  {
+    "id": "E2",
+    "titol": "Festa Major - Sessió DJ",
+    "data": "2026-07-20",
+    "lloc": "Sant Andreu de la Barca",
+    "cachet": 450.0,
+    "clientId": "C3",
+    "assignacionsMaterial": [
+      {
+        "materialId": "M1",
+        "quantitat": 2
+      },
+      {
+        "materialId": "M2",
+        "quantitat": 2
+      },
+      {
+        "materialId": "M4",
+        "quantitat": 2
+      }
+    ]
+  }
+]

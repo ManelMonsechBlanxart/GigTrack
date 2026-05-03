@@ -7,16 +7,17 @@ class Reproductor(
     nom: String,
     marca: String,
     model: String,
-    preuPerDia: Double,
+    preuPerUnitat: Double,
     disponible: Boolean,
-    estat: EstatMaterial
-) : MaterialDJ(id, nom, marca, model, preuPerDia, disponible, estat) {
+    estat: EstatMaterial,
+    quantitat: Int
+) : MaterialDJ(id, nom, marca, model, preuPerUnitat, disponible, estat, quantitat) {
 
     override fun getTipus(): String {
         return "Reproductor"
     }
 
     override fun resum(): String {
-        return "$nom - Reproductor $marca $model"
+        return "$nom - Reproductor $marca $model - Unitats: $quantitat"
     }
 }

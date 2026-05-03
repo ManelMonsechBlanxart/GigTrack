@@ -1,48 +1,41 @@
 package model.material
 
-import model.base.ElementSistema
 import model.base.EstatMaterial
+import model.base.Identificable
 import model.exceptions.DadaNoValidaException
 
 abstract class Material(
-    id: String,
-    nom: String,
+    override val id: String,
+    var nom: String,
     var marca: String,
     var model: String,
-    var preuPerDia: Double,
+    var preuPerUnitat: Double,
     var disponible: Boolean,
-    var estat: EstatMaterial
-) : ElementSistema(id, nom) {
+    var estat: EstatMaterial,
+    var quantitat: Int
+) : Identificable {
 
     init {
-        assert(preuPerDia >= 0) { "El preu per dia no pot ser negatiu" }
+        assert(id.isNotBlank()) { "L'id no pot estar buit" }
+        assert(nom.isNotBlank()) { "El nom no pot estar buit" }
+        assert(preuPerUnitat >= 0) { "El preu no pot ser negatiu" }
+        assert(quantitat >= 0) { "La quantitat no pot ser negativa" }
 
-        if (marca.isBlank()) {
-            throw DadaNoValidaException("La marca no pot estar buida")
+        if (id.isBlank()) {
+            throw DadaNoValidaException("L'id no pot estar buit")
         }
-        if (model.isBlank()) {
-            throw DadaNoValidaException("El model no pot estar buit")
+        if (nom.isBlank()) {
+            throw DadaNoValidaException("El nom no pot estar buit")
         }
-        if (preuPerDia < 0) {
-            throw DadaNoValidaException("El preu per dia no pot ser negatiu")
+        if (preuPerUnitat < 0) {
+            throw DadaNoValidaException("El preu no pot ser negatiu")
+        }
+        if (quantitat < 0) {
+            throw DadaNoValidaException("La quantitat no pot ser negativa")
         }
     }
 
-    open fun getTipus(): String {
-        return "Material"
-    }
+    abstract fun getTipus(): String
 
-    fun marcarDisponible() {
-        disponible = true
-        estat = EstatMaterial.DISPONIBLE
-    }
-
-    fun marcarReservat() {
-        disponible = false
-        estat = EstatMaterial.RESERVAT
-    }
-
-    override fun resum(): String {
-        return "$nom - $marca $model (${getTipus()})"
-    }
+    abstract fun resum(): String
 }

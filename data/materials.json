@@ -1,0 +1,74 @@
+[
+  {
+    "tipusMaterial": "Altaveu",
+    "id": "M1",
+    "nom": "Altaveu JBL PRX815",
+    "marca": "JBL",
+    "model": "PRX815",
+    "preuPerUnitat": 40.0,
+    "disponible": true,
+    "estat": "DISPONIBLE",
+    "quantitat": 6,
+    "polzades": 15,
+    "actiu": true
+  },
+  {
+    "tipusMaterial": "Subwoofer",
+    "id": "M2",
+    "nom": "Subwoofer RCF 18",
+    "marca": "RCF",
+    "model": "SUB 8004",
+    "preuPerUnitat": 55.0,
+    "disponible": true,
+    "estat": "DISPONIBLE",
+    "quantitat": 4,
+    "polzades": 18,
+    "actiu": true
+  },
+  {
+    "tipusMaterial": "Controladora",
+    "id": "M3",
+    "nom": "Controladora Pioneer DDJ-1000",
+    "marca": "Pioneer",
+    "model": "DDJ-1000",
+    "preuPerUnitat": 35.0,
+    "disponible": true,
+    "estat": "DISPONIBLE",
+    "quantitat": 2
+  },
+  {
+    "tipusMaterial": "Reproductor",
+    "id": "M4",
+    "nom": "Reproductor Pioneer CDJ-3000",
+    "marca": "Pioneer",
+    "model": "CDJ-3000",
+    "preuPerUnitat": 60.0,
+    "disponible": true,
+    "estat": "DISPONIBLE",
+    "quantitat": 4
+  },
+  {
+    "tipusMaterial": "CapMovil",
+    "id": "M5",
+    "nom": "Cap mòbil Beam 230",
+    "marca": "Shehds",
+    "model": "Beam 230",
+    "preuPerUnitat": 30.0,
+    "disponible": true,
+    "estat": "DISPONIBLE",
+    "quantitat": 6,
+    "potenciaW": 230
+  },
+  {
+    "tipusMaterial": "Wash",
+    "id": "M6",
+    "nom": "Wash LED Cameo",
+    "marca": "Cameo",
+    "model": "Zenit W300",
+    "preuPerUnitat": 20.0,
+    "disponible": true,
+    "estat": "DISPONIBLE",
+    "quantitat": 8,
+    "potenciaW": 300
+  }
+]
