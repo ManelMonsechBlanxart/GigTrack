@@ -7,7 +7,7 @@
   },
   {
     "id": "C2",
-    "nom": "Ajuntament d'Esparreguera",
+    "nom": "Ajuntament d\u0027Esparreguera",
     "telefon": "600000002",
     "email": "cultura@esparreguera.cat"
   },
@@ -22,5 +22,12 @@
     "nom": "Ajuntament de Reus",
     "telefon": "600000004",
     "email": "alcalde@reus.cat"
+  },
+  {
+    "id": "C1777844201884",
+    "nom": "Video client",
+    "telefon": "600000052",
+    "email": "prova@gmail.com",
+    "esdeveniments": []
   }
 ]

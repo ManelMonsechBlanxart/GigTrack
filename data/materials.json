@@ -70,5 +70,18 @@
     "estat": "DISPONIBLE",
     "quantitat": 8,
     "potenciaW": 300
+  },
+  {
+    "tipusMaterial": "Altaveu",
+    "id": "M1777844229826",
+    "nom": "Altaveu Prova",
+    "marca": "JBL",
+    "model": "12",
+    "preuPerUnitat": 200.0,
+    "disponible": true,
+    "estat": "DISPONIBLE",
+    "quantitat": 10,
+    "polzades": 15,
+    "actiu": true
   }
 ]

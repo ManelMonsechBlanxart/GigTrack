@@ -42,5 +42,33 @@
         "quantitat": 2
       }
     ]
+  },
+  {
+    "id": "E1777844006295",
+    "titol": "Video prova correcte",
+    "data": "2026-06-10",
+    "lloc": "Olesa",
+    "cachet": 200.0,
+    "clientId": "C2",
+    "assignacionsMaterial": [
+      {
+        "materialId": "M1",
+        "quantitat": 1
+      }
+    ]
+  },
+  {
+    "id": "E1777844271977",
+    "titol": "Event Prova Video\t",
+    "data": "2026-05-10",
+    "lloc": "Olesa",
+    "cachet": 500.0,
+    "clientId": "C1777844201884",
+    "assignacionsMaterial": [
+      {
+        "materialId": "M1777844229826",
+        "quantitat": 4
+      }
+    ]
   }
 ]

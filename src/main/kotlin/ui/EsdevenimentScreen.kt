@@ -194,7 +194,7 @@ fun EsdevenimentScreen(
                 val dataParsed = try {
                     LocalDate.parse(data)
                 } catch (e: DateTimeParseException) {
-                    missatgeError = "La data no és vàlida. Format correcte: YYYY-MM-DD"
+                    missatgeError = "Format de la data incorrecte, utilitza: YYYY-MM-DD"
                     return@Button
                 }
 
